@@ -212,10 +212,10 @@
       <div class="post-body">
           <div class="tag-cloud">
             <div class="tag-cloud-title">
-              目前共计 2 个标签
+              目前共计 3 个标签
             </div>
             <div class="tag-cloud-tags">
-              <a href="/tags/%E5%88%86%E4%BA%AB/" style="font-size: 12px; color: #ccc">分享</a> <a href="/tags/%E5%AF%BC%E8%88%AA/" style="font-size: 12px; color: #ccc">导航</a>
+              <a href="/tags/%E5%AF%BC%E8%88%AA-%E5%88%86%E4%BA%AB/" style="font-size: 12px; color: #ccc">-导航 -分享</a> <a href="/tags/%E5%88%86%E4%BA%AB/" style="font-size: 30px; color: #111">分享</a> <a href="/tags/%E5%AF%BC%E8%88%AA/" style="font-size: 30px; color: #111">导航</a>
             </div>
           </div>
         
@@ -294,7 +294,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -307,7 +307,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -359,7 +359,7 @@
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共2.1k字</span>
+  <span class="post-count">博客全站共2.3k字</span>
   <span class="post-meta-divider">|</span>
   本站总访问量<span id="busuanzi_value_site_pv"></span>次
   <span class="post-meta-divider">|</span>
@@ -372,7 +372,7 @@
 <script>
     var now = new Date(); 
     function createtime() { 
-        var grt= new Date("08/10/2018 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+        var grt= new Date("01/08/2023 17:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
         now.setTime(now.getTime()+250); 
         days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
         hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
@@ -380,7 +380,7 @@
         mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
         seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
         snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
-        document.getElementById("timeDate").innerHTML = "朕&博客已安全运行 "+dnum+" 天 "; 
+        document.getElementById("timeDate").innerHTML = "朕&博客已诞生 "+dnum+" 天 "; 
         document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
     } 
 setInterval("createtime()",250);
