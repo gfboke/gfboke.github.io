@@ -58,19 +58,6 @@
       </tags>
   </entry>
   <entry>
-    <title>burpsuite字典爆破</title>
-    <url>/2023/02/05/burpsuite%E5%AD%97%E5%85%B8%E7%88%86%E7%A0%B4/</url>
-    <content><![CDATA[<h1 id="使用工具：firefox-burpsuite"><a href="#使用工具：firefox-burpsuite" class="headerlink" title="使用工具：firefox,burpsuite"></a>使用工具：firefox,burpsuite</h1><span id="more"></span>
-<h1 id="以一次刷题为例《攻防世界》ics-06"><a href="#以一次刷题为例《攻防世界》ics-06" class="headerlink" title="以一次刷题为例《攻防世界》ics-06"></a>以一次刷题为例《攻防世界》ics-06</h1><p>1.查看题目，打开报表中心，在url中发现了?id=1，如果修改，会发现id的值改变不了，于是可以尝试爆<br>破.<br><img src="1.png"><br>2.使用Burp Suite Professional进行抓包，把值传到Action到Intruder中.<br><img src="2.png"><br>3.把爆破的数据两边输入这个符号.<br><img src="4.png"><br>4.在payloads中把类型改成数值（NUmbers）型，范围1-10000就可以了.<br><img src="3.png"><br>5.在结果中查找lenth不同的，发现2333.<br><img src="5.png"><br>6.在url中访问，<a href="http://111.198.29.45:59938/index.php?id=2333,%E5%BE%97%E5%88%B0flag">http://111.198.29.45:59938/index.php?id=2333,得到flag</a>.</p>
-]]></content>
-      <categories>
-        <category>Web</category>
-      </categories>
-      <tags>
-        <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ctf-web</title>
     <url>/2023/02/05/ctf-web/</url>
     <content><![CDATA[<h1 id="刷题日记"><a href="#刷题日记" class="headerlink" title="刷题日记"></a>刷题日记</h1><span id="more"></span>
@@ -84,6 +71,19 @@
 <li>弱类型比较<br>php中的弱类型比较会使’abc’ == 0为真<br>php中弱类型比较时，会使(‘1234a’ == 1234)为真<br>is_numeric() 函数会判断如果是数字和数字字符串则返回 TRUE，否则返回 FALSE,<br>$a == $b    等于    true，如果类型转换后 $a 等于 $b。<br>$a === $b    全等    true，如果 $a 等于 $b，并且它们的类型也相同<h1 id="7-web请求头中的location作用"><a href="#7-web请求头中的location作用" class="headerlink" title="7.web请求头中的location作用"></a>7.web请求头中的location作用</h1>掌握web响应包头部常见参数</li>
 </ul>
 <p>1.根据提示，在url中输入index.php,发现打开的仍然还是1.php<br>2.打开火狐浏览器的开发者模式，选择网络模块，再次请求index.php,查看返回包，可以看到location参数被设置了1.php，并且得到flag。</p>
+]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>burpsuite字典爆破</title>
+    <url>/2023/02/05/burpsuite%E5%AD%97%E5%85%B8%E7%88%86%E7%A0%B4/</url>
+    <content><![CDATA[<h1 id="使用工具：firefox-burpsuite"><a href="#使用工具：firefox-burpsuite" class="headerlink" title="使用工具：firefox,burpsuite"></a>使用工具：firefox,burpsuite</h1><span id="more"></span>
+<h1 id="以一次刷题为例《攻防世界》ics-06"><a href="#以一次刷题为例《攻防世界》ics-06" class="headerlink" title="以一次刷题为例《攻防世界》ics-06"></a>以一次刷题为例《攻防世界》ics-06</h1><p>1.查看题目，打开报表中心，在url中发现了?id=1，如果修改，会发现id的值改变不了，于是可以尝试爆<br>破.<br><img src="1.png"><br>2.使用Burp Suite Professional进行抓包，把值传到Action到Intruder中.<br><img src="2.png"><br>3.把爆破的数据两边输入这个符号.<br><img src="4.png"><br>4.在payloads中把类型改成数值（NUmbers）型，范围1-10000就可以了.<br><img src="3.png"><br>5.在结果中查找lenth不同的，发现2333.<br><img src="5.png"><br>6.在url中访问，<a href="http://111.198.29.45:59938/index.php?id=2333,%E5%BE%97%E5%88%B0flag">http://111.198.29.45:59938/index.php?id=2333,得到flag</a>.</p>
 ]]></content>
       <categories>
         <category>Web</category>
@@ -148,7 +148,7 @@
   <entry>
     <title>《攻防世界》刷题记录</title>
     <url>/2023/02/09/%E3%80%8A%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E3%80%8B%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h1 id="Web-Crypo-Misc"><a href="#Web-Crypo-Misc" class="headerlink" title="Web Crypo Misc"></a>Web Crypo Misc</h1><span id="more"></span>
+    <content><![CDATA[<h1 id="Web-amp-Crypo-amp-Misc"><a href="#Web-amp-Crypo-amp-Misc" class="headerlink" title="Web&amp;Crypo&amp;Misc"></a>Web&amp;Crypo&amp;Misc</h1><span id="more"></span>
 <h1 id="1-Web-php-include"><a href="#1-Web-php-include" class="headerlink" title="1.Web_php_include"></a>1.Web_php_include</h1><ul>
 <li>打开链接，题目给了源码 <img src="2.png">题目源码中试图过滤 php:// 伪协议以及调用 include($page) ，这实际上是在提示：利用PHP伪协议+文件包含。</li>
 <li>可以绕过 php:// 伪协议过滤的有data://伪协议：</li>
@@ -180,27 +180,15 @@
 <li>点击 Creat repository 进行创建<br><img src="https://s1.vika.cn/space/2022/10/27/0a4dbb10ca69422ca9ccb7493d0f177a"><h1 id="4-Git安装"><a href="#4-Git安装" class="headerlink" title="4.Git安装"></a>4.Git安装</h1></li>
 </ul>
 <p>1.进入官网：<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a> ，由于官网下载太慢可以通过淘宝的开源镜像下载 网址：<a href="https://registry.npmmirror.com/binary.html?path=git-for-windows/v2.36.1.windows.1/">https://registry.npmmirror.com/binary.html?path=git-for-windows/v2.36.1.windows.1/</a> ，下载版本更具自己的需求选择即可。<br>2.下载后安装Git即可，安装的目录可以使用默认目录【C:/Program Files/Git】，也可以自定义路径。<br>3.点击鼠标右键即可看见Git Bash。<br>4.配置用户名和邮箱<br>git config –global user.name “你的用户名”<br>git config –global user.email “你的邮箱”<br>5.通过git config -l 检查是否配置成功，至此git安装及配置全部完成。<br><img src="https://s1.vika.cn/space/2022/10/27/9115d60b377a47f3a8b79779a287ee65"></p>
-<h1 id="5-连接至Github"><a href="#5-连接至Github" class="headerlink" title="5.连接至Github"></a>5.连接至Github</h1><p>1.执行以下命令生成ssh公钥，此公钥用于你的计算机连接Github<br>ssh-keygen -t rsa -C “你的邮箱”<br>之后打开C盘下用户文件夹下的.ssh的文件夹，会看到 id_rsa.pub,用记事本打开上述图片中的公钥（id_rsa.pub），复制里面的内容，然后开始在github中配置ssh密钥。<br>2.将 SSH KEY 配置到 GitHub<br>进入github，点击右上角头像 选择settings，进入设置页后选择 SSH and GPG keys，名字随便起，公钥填到Key那一栏。<br><img src="https://s1.vika.cn/space/2022/10/27/eaccde8a10eb4cde945a1ed221bb6ace"><br>3.测试连接，输入命令:ssh -T <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#111;&#109;">&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#111;&#109;</a><br><img src="https://s1.vika.cn/space/2022/10/27/122bb1ef33074bee84030a525ce1ec56"><br>出现连接到账户的信息，说明已经完成了环境准备工作。</p>
+<h1 id="5-连接至Github"><a href="#5-连接至Github" class="headerlink" title="5.连接至Github"></a>5.连接至Github</h1><p>1.执行以下命令生成ssh公钥，此公钥用于你的计算机连接Github<br>ssh-keygen -t rsa -C “你的邮箱”<br>之后打开C盘下用户文件夹下的.ssh的文件夹，会看到 id_rsa.pub,用记事本打开上述图片中的公钥（id_rsa.pub），复制里面的内容，然后开始在github中配置ssh密钥。<br>2.将 SSH KEY 配置到 GitHub<br>进入github，点击右上角头像 选择settings，进入设置页后选择 SSH and GPG keys，名字随便起，公钥填到Key那一栏。<br><img src="https://s1.vika.cn/space/2022/10/27/eaccde8a10eb4cde945a1ed221bb6ace"><br>3.测试连接，输入命令:ssh -T <a href="mailto:&#103;&#105;&#116;&#x40;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#103;&#105;&#116;&#x40;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;</a><br><img src="https://s1.vika.cn/space/2022/10/27/122bb1ef33074bee84030a525ce1ec56"><br>出现连接到账户的信息，说明已经完成了环境准备工作。</p>
 <h1 id="6-初始化-Hexo-项目"><a href="#6-初始化-Hexo-项目" class="headerlink" title="6.初始化 Hexo 项目"></a>6.初始化 Hexo 项目</h1><p>1.在目标路径（我这里选的路径为【C:/Hexo-Blog】）打开Git Bash Here命令窗口，执行hexo init初始化项目。hexo init blog-demo(项目名)<br>2.进入blog-demo ，输入npm i安装相关依赖。<br>cd blog-demo  //进入blog-demo文件夹<br>npm i<br>3.初始化项目后，blog-demo有如下结构：<br><img src="https://s1.vika.cn/space/2022/10/27/70cf503f27c54d30a31c6b13735023b7"><br>【node_modules】：依赖包<br>【scaffolds】：生成文章的一些模板<br>【source】：用来存放你的文章<br>【themes】：主题<br>【.npmignore】：发布时忽略的文件（可忽略）<br>【_config.landscape.yml】：主题的配置文件<br>【config.yml】：博客的配置文件<br>【package.json】：项目名称、描述、版本、运行和开发等信息<br>4.输入hexo server或者hexo s 启动项目<br>5.打开浏览器，输入地址：<a href="http://localhost:4000/">http://localhost:4000/</a> ，看到下面的效果，说明你的博客已经构建成功了。<br><img src="https://bu.dusays.com/2022/05/26/628e5423df640.webp"></p>
-<h1 id="7-将静态博客挂载到-GitHub-Pages"><a href="#7-将静态博客挂载到-GitHub-Pages" class="headerlink" title="7.将静态博客挂载到 GitHub Pages"></a>7.将静态博客挂载到 GitHub Pages</h1><p>1.安装 hexo-deployer-git<br>命令：npm install hexo-deployer-git –save<br>2.修改 _config.yml 文件<br>在blog-demo目录下的_config.yml，就是整个Hexo框架的配置文件了。可以在里面修改大部分的配置。详细可参考官方的配置描述。<br>修改最后一行的配置，将repository修改为你自己的github项目地址即可，还有分支要改为main代表主分支（注意缩进）。<br>deploy:<br>  type: git<br>  repository: <a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#105;&#x74;&#104;&#117;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#x69;&#116;&#x40;&#103;&#105;&#x74;&#104;&#117;&#98;&#x2e;&#99;&#x6f;&#x6d;</a>:gfboke/gfboke.github.io.git<br>  branch: main<br>3.修改好配置后，运行如下命令，将代码部署到 GitHub.<br>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy  // Git BASH终端<br>hexo clean; hexo generate; hexo deploy  // VSCODE终端<br>hexo clean：删除之前生成的文件，若未生成过静态文件，可忽略此命令。<br>hexo generate：生成静态文章，可以用hexo g缩写<br>hexo deploy：部署文章，可以用hexo d缩写<br>如果出现Deploy done，则说明部署成功了。<br><img src="https://s1.vika.cn/space/2022/10/27/85b61e7242214d368539d744b4778a5d"><br>稍等两分钟，打开浏览器访问：<a href="https://gfboke.github.io/">https://gfboke.github.io</a> ，这时候我们就可以看到博客内容了。</p>
+<h1 id="7-将静态博客挂载到-GitHub-Pages"><a href="#7-将静态博客挂载到-GitHub-Pages" class="headerlink" title="7.将静态博客挂载到 GitHub Pages"></a>7.将静态博客挂载到 GitHub Pages</h1><p>1.安装 hexo-deployer-git<br>命令：npm install hexo-deployer-git –save<br>2.修改 _config.yml 文件<br>在blog-demo目录下的_config.yml，就是整个Hexo框架的配置文件了。可以在里面修改大部分的配置。详细可参考官方的配置描述。<br>修改最后一行的配置，将repository修改为你自己的github项目地址即可，还有分支要改为main代表主分支（注意缩进）。<br>deploy:<br>  type: git<br>  repository: <a href="mailto:&#103;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#x62;&#46;&#x63;&#111;&#109;">&#103;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#x62;&#46;&#x63;&#111;&#109;</a>:gfboke/gfboke.github.io.git<br>  branch: main<br>3.修改好配置后，运行如下命令，将代码部署到 GitHub.<br>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy  // Git BASH终端<br>hexo clean; hexo generate; hexo deploy  // VSCODE终端<br>hexo clean：删除之前生成的文件，若未生成过静态文件，可忽略此命令。<br>hexo generate：生成静态文章，可以用hexo g缩写<br>hexo deploy：部署文章，可以用hexo d缩写<br>如果出现Deploy done，则说明部署成功了。<br><img src="https://s1.vika.cn/space/2022/10/27/85b61e7242214d368539d744b4778a5d"><br>稍等两分钟，打开浏览器访问：<a href="https://gfboke.github.io/">https://gfboke.github.io</a> ，这时候我们就可以看到博客内容了。</p>
 ]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>蚁剑的下载与使用</title>
-    <url>/2023/02/09/%E8%9A%81%E5%89%91%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p><img src="https://dyblogs.cn/bkyimg/yijian01.png"></p>
-<span id="more"></span>]]></content>
-      <categories>
-        <category>Web</category>
-      </categories>
-      <tags>
-        <tag>Web</tag>
       </tags>
   </entry>
   <entry>
@@ -241,6 +229,18 @@
       </categories>
       <tags>
         <tag>ctf</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>蚁剑的安装与使用</title>
+    <url>/2023/02/09/%E8%9A%81%E5%89%91%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p><img src="https://dyblogs.cn/bkyimg/yijian01.png"></p>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
       </tags>
   </entry>
 </search>
