@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>数组元素循环右移问题</title>
+    <url>/2023/02/08/C%E8%AF%AD%E8%A8%80/</url>
+    <content><![CDATA[<h1 id="pta"><a href="#pta" class="headerlink" title="pta"></a>pta</h1><span id="more"></span>
+<p>一个数组A中存有N（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向右移M（≥0）个位置，即将A中的数据由（A<br>0A1⋯AN−1）变换为（AN−M⋯AN−1A0A1⋯AN−M−1）（最后M个数循环移至最前面的M个位置）。如果需要考虑程序移动数据的次数尽量少，要如何设计移动的方法？</p>
+<p>输入格式:<br>每个输入包含一个测试用例，第1行输入N（1≤N≤100）和M（≥0）；第2行输入N个整数，之间用空格分隔。</p>
+<p>输出格式:<br>在一行中输出循环右移M位以后的整数序列，之间用空格分隔，序列结尾不能有多余空格。</p>
+<p>输入样例:<br>6 2<br>1 2 3 4 5 6<br>输出样例:<br>5 6 1 2 3 4</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n,m;</span><br><span class="line">    int i,j;</span><br><span class="line">    int k;</span><br><span class="line">    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);</span><br><span class="line">    int a[n];</span><br><span class="line">    for(i=0;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    for(j=0;j&lt;m;j++)</span><br><span class="line">    &#123;</span><br><span class="line">        k=a[n-1];</span><br><span class="line">        for(i=n-1;i&gt;0;i--)</span><br><span class="line">        &#123;</span><br><span class="line">            a[i]=a[(i-1+n)%n];</span><br><span class="line">        &#125;</span><br><span class="line">        a[0]=k;</span><br><span class="line">    &#125;</span><br><span class="line">    for(i=0;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(i==n-1)</span><br><span class="line">            printf(&quot;%d&quot;,a[i]);</span><br><span class="line">        else</span><br><span class="line">            printf(&quot;%d &quot;,a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+      <tags>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>burpsuite字典爆破</title>
     <url>/2023/02/05/burpsuite%E5%AD%97%E5%85%B8%E7%88%86%E7%A0%B4/</url>
     <content><![CDATA[<h1 id="使用工具：firefox-burpsuite"><a href="#使用工具：firefox-burpsuite" class="headerlink" title="使用工具：firefox,burpsuite"></a>使用工具：firefox,burpsuite</h1><span id="more"></span>
@@ -123,9 +139,9 @@
 <li>点击 Creat repository 进行创建<br><img src="https://s1.vika.cn/space/2022/10/27/0a4dbb10ca69422ca9ccb7493d0f177a"><h1 id="4-Git安装"><a href="#4-Git安装" class="headerlink" title="4.Git安装"></a>4.Git安装</h1></li>
 </ul>
 <p>1.进入官网：<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a> ，由于官网下载太慢可以通过淘宝的开源镜像下载 网址：<a href="https://registry.npmmirror.com/binary.html?path=git-for-windows/v2.36.1.windows.1/">https://registry.npmmirror.com/binary.html?path=git-for-windows/v2.36.1.windows.1/</a> ，下载版本更具自己的需求选择即可。<br>2.下载后安装Git即可，安装的目录可以使用默认目录【C:/Program Files/Git】，也可以自定义路径。<br>3.点击鼠标右键即可看见Git Bash。<br>4.配置用户名和邮箱<br>git config –global user.name “你的用户名”<br>git config –global user.email “你的邮箱”<br>5.通过git config -l 检查是否配置成功，至此git安装及配置全部完成。<br><img src="https://s1.vika.cn/space/2022/10/27/9115d60b377a47f3a8b79779a287ee65"></p>
-<h1 id="5-连接至Github"><a href="#5-连接至Github" class="headerlink" title="5.连接至Github"></a>5.连接至Github</h1><p>1.执行以下命令生成ssh公钥，此公钥用于你的计算机连接Github<br>ssh-keygen -t rsa -C “你的邮箱”<br>之后打开C盘下用户文件夹下的.ssh的文件夹，会看到 id_rsa.pub,用记事本打开上述图片中的公钥（id_rsa.pub），复制里面的内容，然后开始在github中配置ssh密钥。<br>2.将 SSH KEY 配置到 GitHub<br>进入github，点击右上角头像 选择settings，进入设置页后选择 SSH and GPG keys，名字随便起，公钥填到Key那一栏。<br><img src="https://s1.vika.cn/space/2022/10/27/eaccde8a10eb4cde945a1ed221bb6ace"><br>3.测试连接，输入命令:ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#64;&#103;&#x69;&#x74;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#109;">&#x67;&#x69;&#x74;&#64;&#103;&#x69;&#x74;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#109;</a><br><img src="https://s1.vika.cn/space/2022/10/27/122bb1ef33074bee84030a525ce1ec56"><br>出现连接到账户的信息，说明已经完成了环境准备工作。</p>
+<h1 id="5-连接至Github"><a href="#5-连接至Github" class="headerlink" title="5.连接至Github"></a>5.连接至Github</h1><p>1.执行以下命令生成ssh公钥，此公钥用于你的计算机连接Github<br>ssh-keygen -t rsa -C “你的邮箱”<br>之后打开C盘下用户文件夹下的.ssh的文件夹，会看到 id_rsa.pub,用记事本打开上述图片中的公钥（id_rsa.pub），复制里面的内容，然后开始在github中配置ssh密钥。<br>2.将 SSH KEY 配置到 GitHub<br>进入github，点击右上角头像 选择settings，进入设置页后选择 SSH and GPG keys，名字随便起，公钥填到Key那一栏。<br><img src="https://s1.vika.cn/space/2022/10/27/eaccde8a10eb4cde945a1ed221bb6ace"><br>3.测试连接，输入命令:ssh -T <a href="mailto:&#103;&#x69;&#116;&#x40;&#x67;&#105;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#x6f;&#109;">&#103;&#x69;&#116;&#x40;&#x67;&#105;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#x6f;&#109;</a><br><img src="https://s1.vika.cn/space/2022/10/27/122bb1ef33074bee84030a525ce1ec56"><br>出现连接到账户的信息，说明已经完成了环境准备工作。</p>
 <h1 id="6-初始化-Hexo-项目"><a href="#6-初始化-Hexo-项目" class="headerlink" title="6.初始化 Hexo 项目"></a>6.初始化 Hexo 项目</h1><p>1.在目标路径（我这里选的路径为【C:/Hexo-Blog】）打开Git Bash Here命令窗口，执行hexo init初始化项目。hexo init blog-demo(项目名)<br>2.进入blog-demo ，输入npm i安装相关依赖。<br>cd blog-demo  //进入blog-demo文件夹<br>npm i<br>3.初始化项目后，blog-demo有如下结构：<br><img src="https://s1.vika.cn/space/2022/10/27/70cf503f27c54d30a31c6b13735023b7"><br>【node_modules】：依赖包<br>【scaffolds】：生成文章的一些模板<br>【source】：用来存放你的文章<br>【themes】：主题<br>【.npmignore】：发布时忽略的文件（可忽略）<br>【_config.landscape.yml】：主题的配置文件<br>【config.yml】：博客的配置文件<br>【package.json】：项目名称、描述、版本、运行和开发等信息<br>4.输入hexo server或者hexo s 启动项目<br>5.打开浏览器，输入地址：<a href="http://localhost:4000/">http://localhost:4000/</a> ，看到下面的效果，说明你的博客已经构建成功了。<br><img src="https://bu.dusays.com/2022/05/26/628e5423df640.webp"></p>
-<h1 id="7-将静态博客挂载到-GitHub-Pages"><a href="#7-将静态博客挂载到-GitHub-Pages" class="headerlink" title="7.将静态博客挂载到 GitHub Pages"></a>7.将静态博客挂载到 GitHub Pages</h1><p>1.安装 hexo-deployer-git<br>命令：npm install hexo-deployer-git –save<br>2.修改 _config.yml 文件<br>在blog-demo目录下的_config.yml，就是整个Hexo框架的配置文件了。可以在里面修改大部分的配置。详细可参考官方的配置描述。<br>修改最后一行的配置，将repository修改为你自己的github项目地址即可，还有分支要改为main代表主分支（注意缩进）。<br>deploy:<br>  type: git<br>  repository: <a href="mailto:&#x67;&#105;&#116;&#64;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#46;&#99;&#111;&#109;">&#x67;&#105;&#116;&#64;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#46;&#99;&#111;&#109;</a>:gfboke/gfboke.github.io.git<br>  branch: main<br>3.修改好配置后，运行如下命令，将代码部署到 GitHub.<br>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy  // Git BASH终端<br>hexo clean; hexo generate; hexo deploy  // VSCODE终端<br>hexo clean：删除之前生成的文件，若未生成过静态文件，可忽略此命令。<br>hexo generate：生成静态文章，可以用hexo g缩写<br>hexo deploy：部署文章，可以用hexo d缩写<br>如果出现Deploy done，则说明部署成功了。<br><img src="https://s1.vika.cn/space/2022/10/27/85b61e7242214d368539d744b4778a5d"><br>稍等两分钟，打开浏览器访问：<a href="https://gfboke.github.io/">https://gfboke.github.io</a> ，这时候我们就可以看到博客内容了。</p>
+<h1 id="7-将静态博客挂载到-GitHub-Pages"><a href="#7-将静态博客挂载到-GitHub-Pages" class="headerlink" title="7.将静态博客挂载到 GitHub Pages"></a>7.将静态博客挂载到 GitHub Pages</h1><p>1.安装 hexo-deployer-git<br>命令：npm install hexo-deployer-git –save<br>2.修改 _config.yml 文件<br>在blog-demo目录下的_config.yml，就是整个Hexo框架的配置文件了。可以在里面修改大部分的配置。详细可参考官方的配置描述。<br>修改最后一行的配置，将repository修改为你自己的github项目地址即可，还有分支要改为main代表主分支（注意缩进）。<br>deploy:<br>  type: git<br>  repository: <a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#105;&#x74;&#x68;&#x75;&#x62;&#46;&#99;&#x6f;&#x6d;">&#x67;&#x69;&#116;&#x40;&#103;&#105;&#x74;&#x68;&#x75;&#x62;&#46;&#99;&#x6f;&#x6d;</a>:gfboke/gfboke.github.io.git<br>  branch: main<br>3.修改好配置后，运行如下命令，将代码部署到 GitHub.<br>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy  // Git BASH终端<br>hexo clean; hexo generate; hexo deploy  // VSCODE终端<br>hexo clean：删除之前生成的文件，若未生成过静态文件，可忽略此命令。<br>hexo generate：生成静态文章，可以用hexo g缩写<br>hexo deploy：部署文章，可以用hexo d缩写<br>如果出现Deploy done，则说明部署成功了。<br><img src="https://s1.vika.cn/space/2022/10/27/85b61e7242214d368539d744b4778a5d"><br>稍等两分钟，打开浏览器访问：<a href="https://gfboke.github.io/">https://gfboke.github.io</a> ，这时候我们就可以看到博客内容了。</p>
 ]]></content>
       <categories>
         <category>Hexo</category>
@@ -135,59 +151,9 @@
       </tags>
   </entry>
   <entry>
-    <title>甘肃政法大学新生赛wp</title>
-    <url>/2023/02/08/%E7%94%98%E8%82%83%E6%94%BF%E6%B3%95%E5%A4%A7%E5%AD%A6%E6%96%B0%E7%94%9F%E8%B5%9Bwp/</url>
-    <content><![CDATA[<h1 id="小试牛刀"><a href="#小试牛刀" class="headerlink" title="小试牛刀"></a>小试牛刀</h1><span id="more"></span>
-<h1 id="1-Misc-指北下载附件"><a href="#1-Misc-指北下载附件" class="headerlink" title="1.Misc 指北下载附件"></a>1.Misc 指北下载附件</h1><p>浏览找到本题 flag：flag{D_I_D_C_T_F_yyds} </p>
-<h1 id="2-网络谜踪-1"><a href="#2-网络谜踪-1" class="headerlink" title="2.网络谜踪 1"></a>2.网络谜踪 1</h1><p>附件是一张图片，放到百度搜索，点开相似的图片，看到龙寻高速为 flag:DIDCTF{龙寻高速} </p>
-<h1 id="3-What？"><a href="#3-What？" class="headerlink" title="3.What？"></a>3.What？</h1><p>下载附件，改后缀为 zip，解压，得到一张图片，打开用 QQ 扫描得到一个链接，不用打开链接就可以看到 flagDIDCTF{1_thlNk_Eosu} </p>
-<h1 id="4-最后的晚餐"><a href="#4-最后的晚餐" class="headerlink" title="4.最后的晚餐"></a>4.最后的晚餐</h1><p>下载附件，解压得到一张图片，用 stegsolve 打开，放进图片，查看数据，得到 DIDCTF{4 1764b8a-32ff-11e d-9014-005056c00008}<img src="1.jpg"></p>
-<h1 id="5-难搞啊"><a href="#5-难搞啊" class="headerlink" title="5.难搞啊"></a>5.难搞啊</h1><p>复制文本到记事本里方便看，观察得到 DIDCTF{ce40ad63-7063-11ed-b10c-a0e05mc8wkfi}</p>
-<h1 id="6-扫他！"><a href="#6-扫他！" class="headerlink" title="6.扫他！"></a>6.扫他！</h1><p>下载附件，改后缀位 zip，解压得到一个二维码，扫一下得到AGCTF{W3lc0m3_t0_555ll333}</p>
-<h1 id="7-Base"><a href="#7-Base" class="headerlink" title="7.Base"></a>7.Base</h1><p>下载附件，打开直接拉到最后看到三串密码，是 base64 密码格式,直接 base64 解码得到 flag{I_Knaw_Whot_ls_Base}</p>
-<h1 id="8-hELlo"><a href="#8-hELlo" class="headerlink" title="8.hELlo"></a>8.hELlo</h1><p>下载附件，解压打开得到一串密文，百度一下是 jsfuck 密码，复制密码打开火狐浏览器，F12 打开控制台，粘贴回车得到<br>DIDCTF{He11o js}</p>
-<h1 id="9-听只因的声音"><a href="#9-听只因的声音" class="headerlink" title="9.听只因的声音"></a>9.听只因的声音</h1><p>下载附件是一段音频，放到 Audacity，ctrl+1 放大摩斯音频，对照摩斯密码表，解出 DIDCTF{wh47h47h90dw20u9h7}</p>
-<h1 id="10-字母歌字母儿歌你会倒着唱吗？"><a href="#10-字母歌字母儿歌你会倒着唱吗？" class="headerlink" title="10.字母歌字母儿歌你会倒着唱吗？"></a>10.字母歌字母儿歌你会倒着唱吗？</h1><p>DIDCTF{18 24 26 13 08 18 13 20 26 15 11 19 26 25 22 07 08 12 13 20} 看到这个想到 26 个英文字母到过来，按照数字数数，最后放到一起都大写为 flag：DIDCTF{ICANSINGALPHABETSONG}</p>
-<h1 id="11-凯撒密码"><a href="#11-凯撒密码" class="headerlink" title="11.凯撒密码"></a>11.凯撒密码</h1><p>题目是一串凯撒密码，放到在线解密工具，因为key是0—25，提示又说答案是一句话，所以key试到14的时侯是一句话<br>yesthisiscorrectanswer 然后提示每个单词首字母大写，所以flag：DIDCTF{YesThisIsCorrectAnswer}</p>
-<h1 id="12-古典密码"><a href="#12-古典密码" class="headerlink" title="12.古典密码"></a>12.古典密码</h1><p>附件是一个文档，打开可以找到 flag ： flag{H0pe_You_Kanw_Classical_Cipher}</p>
-<h1 id="13-恶魔低语"><a href="#13-恶魔低语" class="headerlink" title="13.恶魔低语"></a>13.恶魔低语</h1><p>下载附件，解压出一个文档，打开是一串密文，百度一下是 Emoji 密码，在线解密得到 flag{0a6aff6f-1d57-11ed-82faa0e70bf76508}</p>
-<h1 id="14-神秘符号"><a href="#14-神秘符号" class="headerlink" title="14.神秘符号"></a>14.神秘符号</h1><p>打开看到两串密文，百度一下是 Quoted-printable 密码，在线 解码得到三帝五币七易恩六哦辟替优八微外九换成数字加大写英文，得到flag{3D5B7EA6OPTU8VY9}</p>
-<h1 id="15-爱国敬业好青年"><a href="#15-爱国敬业好青年" class="headerlink" title="15.爱国敬业好青年"></a>15.爱国敬业好青年</h1><p>打开，复制密码，核心价值观密码在线解密得到DIDCTF{I_0ixo_diock2kdas0o}</p>
-<h1 id="16-猴哥-二师兄来了"><a href="#16-猴哥-二师兄来了" class="headerlink" title="16.猴哥,二师兄来了"></a>16.猴哥,二师兄来了</h1><p>下载附件解压得到两个文件，一个为密码，一个是假的 flag，看文档名是猪哥说，猜想可能是猪圈密码，或者百度也可以，最后用猪圈密码在线解密，对照密码表得到明文：i t i s s o e a s y 得到 AGCTF{i t i s s o e a s y}</p>
-<h1 id="17-胡萝卜"><a href="#17-胡萝卜" class="headerlink" title="17.胡萝卜"></a>17.胡萝卜</h1><p>打开题是一串密码，百度一下是 Rabbit 密码，在线解密得到DIDCTF{o29i4jeiw82-o10d82kd-0wf2425}</p>
-<h1 id="18-Pwn-Easy"><a href="#18-Pwn-Easy" class="headerlink" title="18.Pwn_Easy"></a>18.Pwn_Easy</h1><p>打开 kali 终端，输入 nc 81.69.247.186 10000，回车，输入 sh，ls 查看，可以看到 flag，cat flag 发现没有，可能是空格被过滤，百度一下解决方法，可以 cat$IFS}flag 可以得到 flag ：flag{f3ea83d3-cba2-498d-ad32-50b0e332f2dd}</p>
-<h1 id="19-overflow"><a href="#19-overflow" class="headerlink" title="19.overflow"></a>19.overflow</h1><p>先下载附件，解压，放入查壳工具了发现无壳64位,放入64位ida里,找到main函数<img src="2.jpg"><br>查看 func 函数<img src="3.jpg"><br>查看 NB 函数<img src="4.jpg"><br>执行这个函数这个函数可以得到超级用户的权限，但是 main 函数里没有执行这个函数，func 函数里有 get 函数，根据提示百度栈    溢出，<a href="https://blog.csdn.net/woodwhale/article/details/115803785">https://blog.csdn.net/woodwhale/article/details/115803785</a> 复制脚本<br><img src="5.jpg">remote 是连接地址，后边改为这个题的ip81.69.247.186 8809 success记录的是可以获得权限的地址，也就是 NB 的地址，改为 nb= 0x4006CA+1，0x4006CA 是 nb 的地址，+1 是为了堆栈平衡，payload 是传输 get（S），改为 payload = b’a’ * (0*A+8)  + p64(nb)，将文件和脚本复制到 kali 里，终端输入命令 chmod 777 a，改为可执行权限，执行脚本，ls 后能看到 flag，cat 一下得到flag：AGCTF{1xa5-awda1-dafggsgasa5}</p>
-<h1 id="20-高考"><a href="#20-高考" class="headerlink" title="20.高考"></a>20.高考</h1><p>打开题目给的环境，题目说总分 600 分以上给 flag，用 bp 改包，将源码里的 136 改为 700，然后放包，然后打开控制台响应，可以找到 flag:DIDCTF{28f21aaf-6f24-11ed-b24f-005056c0b3dao7}</p>
-<h1 id="21-杀马小游戏"><a href="#21-杀马小游戏" class="headerlink" title="21.杀马小游戏"></a>21.杀马小游戏</h1><p>打开题目给的环境，直接看源码，看到一串密文\u5b81\u6740\u5149\u4e86\u6240\u6709\u7684\ud83d\udc34\uff0c\u7ed9\u60a8\x66\x6c\x61\x67\x3a\x44\x49\x44\x43\x54\x46\x7b\x59\x30\x75\x5f\x41\x72\x45\x5f\x48\x4f\x72\x73\x65\x5f\x6b\x69\x6c\x6c\x45\x52\x7d’); window<a href="dsq">‘\x63\x6c\x65\x61\x72\x49\x6e\x74\x65\x72\x76\x61\x6c’</a>;l ocation[‘\x72\x65\x6c\x6f\x61\x64<br>用 python 翻译一下<br><img src="6.jpg">就得到了 flag：DIDCTF{Y0u_ArE_HOrse_killER}</p>
-<h1 id="22-FLAG-提取器"><a href="#22-FLAG-提取器" class="headerlink" title="22.FLAG 提取器"></a>22.FLAG 提取器</h1><p>打开题目给的环境，点提取 flag ，网址变成了<a href="http://43.155.101.26:49425/?number=0%EF%BC%8C%E6%8A%8A">http://43.155.101.26:49425/?number=0，把</a> 0 改成 1，回显可以<br>看到 flag<br><img src="7.jpg">DIDCTF{8a620dee-6fd0-11ed-a99d-a0e70bf76508}</p>
-<h1 id="23-逆向指北"><a href="#23-逆向指北" class="headerlink" title="23.逆向指北"></a>23.逆向指北</h1><p>下载附件，浏览文档，直接拉到最后可以得到 flag:DIDCTF{0hhhhhhh_I_kn0w_hoW_t0_R3v3rs3!}</p>
-<h1 id="24-Easy-Web"><a href="#24-Easy-Web" class="headerlink" title="24.Easy_Web"></a>24.Easy_Web</h1><p>打开题目给的环境，发现右键和 F12，ctrl+u 都被禁用，随便 Get 传参一个值，发现 F12 可以用了，打开查看器，点开 body 头文件，看到里面有一串密文：<br><img src="8.jpg">百度一下发现可以 base64 解码，用 base64 在线解密得到一段文字，里面有 flag:DIDCTF{7a0cde14-47ad-4073-87b2e9e34901638d}</p>
-<h1 id="25-Baby-zip"><a href="#25-Baby-zip" class="headerlink" title="25.Baby_zip"></a>25.Baby_zip</h1><p>下载附件是一个压缩包，解压后得到的又是一个压缩包，继续解压，得到一张图片，题目说图片的高度隐藏着些某些秘密，想到用 010Editor 打开，第二行是宽和高，把高往大改，保存<br><img src="9.jpg">可 以 看 到 图 片 最 下 方 有 flag:flag{YqqzgFmU5JIbD5pMVMrBUzyHdSrYLq}</p>
-<h1 id="26-Easy-pcap"><a href="#26-Easy-pcap" class="headerlink" title="26.Easy_pcap"></a>26.Easy_pcap</h1><p>下载附件，直接用 Wireshark 打开，寻找特殊数据包的追踪流,在 3513 24.910074 的数据包里发现 flag<br><img src="10.jpg">flag{pacp_warm_up_43dq989scj3e3}</p>
-<h1 id="27-泄密事件"><a href="#27-泄密事件" class="headerlink" title="27.泄密事件"></a>27.泄密事件</h1><p>下载附件，是一个压缩包，解压需要密码，题干说密码是 100 到 1000 的总和，百度一下得到 75067，打开是一张图片，用记事本打开，拉到最后发现一串 base64 密码，尝试解密，发现没有用，百度一下 base64 密码使用方法，发现还可以转换出图片，使用<a href="https://www.toolnb.com/tools/base64ToImages.html">https://www.toolnb.com/tools/base64ToImages.html</a> 这个工具转换出一张二维码<img src="11.jpg">扫码得到 flag：flag{asdf%^&amp;*ghjkl}</p>
-<h1 id="28-鼠鼠我啊爱玩游戏"><a href="#28-鼠鼠我啊爱玩游戏" class="headerlink" title="28.鼠鼠我啊爱玩游戏"></a>28.鼠鼠我啊爱玩游戏</h1><p>打开题目给的环境,直接看源码,/getScore.php,放大网址后回显,出现一段英文<img src="12.jpg">然后2秒刷新一次,50次后出现 flag：DIDCTF{84b516eb-6f1a-11ed-92f0-005056c00008}</p>
-]]></content>
-      <categories>
-        <category>ctf</category>
-      </categories>
-      <tags>
-        <tag>ctf</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>蚁剑的安装与使用</title>
+    <title>一句话木马</title>
     <url>/2023/02/09/%E8%9A%81%E5%89%91%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p><img src="https://dyblogs.cn/bkyimg/yijian01.png"></p>
-<span id="more"></span>
-<h1 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h1><p>下载链接<br>源码: <a href="https://github.com/yzddmr6/As-Exploits">https://github.com/yzddmr6/As-Exploits</a><br>加载器地址: <a href="https://github.com/AntSwordProject/AntSword-Loader">https://github.com/AntSwordProject/AntSword-Loader</a><br>蚁剑需要使用到两样东西，一个是核心源码，一个是加载器<br>安装步骤：</p>
-<ol>
-<li>将两个文件放到自己想要存放的位置</li>
-<li>启动加载器文件夹中的 AntSword 文件，选择自己核心源码的位置，只需要选择到AntSword-2.x这个文件就可以了，不用点进去</li>
-<li>选中后它会自动加载，在以后的使用中不需要再进行选择<h1 id="二-使用"><a href="#二-使用" class="headerlink" title="二.使用"></a>二.使用</h1>链接webshell<br>1，进入主页，鼠标右键选中添加数据<img src="https://img-blog.csdnimg.cn/d2ee481565394b5a88fda2e8d47c7112.png"><br>2，输入url，密码，选择编码格式(一般不用，但是如果返回的内容是乱码，可以再修改)，选择编码类型，默认明文传输(容易被拦截)<br>3，请求信息中可以自定义添加请求头和请求体信息<br><img src="https://img-blog.csdnimg.cn/58a3d8c6802e4acb8dfcb36a63c6597a.png"></li>
-<li>其他设置这里忽略https证书，增加垃圾数据，使用随机单词变量等功能，感觉还是很少用，倒是可以干扰目标</li>
-<li>配置完毕后点击上方测试链接，看看时候能够连接成功，如果没问题，就添加。</li>
-</ol>
-]]></content>
+    <content><![CDATA[]]></content>
       <categories>
         <category>Web</category>
       </categories>
