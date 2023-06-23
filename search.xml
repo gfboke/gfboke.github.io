@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>docker搭建</title>
-    <url>/2023/03/26/C%E8%AF%AD%E8%A8%80/</url>
-    <content><![CDATA[<h1 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h1><span id="more"></span>
-<p>基于kali环境搭建</p>
-<h1 id="vulhub简介"><a href="#vulhub简介" class="headerlink" title="vulhub简介"></a>vulhub简介</h1><p>Vulhub是一个基于docker和docker-compose的漏洞环境集合，进入对应目录并执行一条语句即可启动一个全新的漏洞环境，让漏洞复现变得更加简单，让安全研究者更加专注于漏洞原理本身。Vulhub的官方地址为<a href="http://www.vulhub.org./">www.vulhub.org。</a></p>
-<h1 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h1><p>在root用户下更新软件源中的所有软件列表，update读取所有源的软件列表，需要联网下载，作用是激活和更新源。<br><code>apt-get update</code><br>使用atp命令需要其支持的https协议和CA证书，我们安装一下<br><code>apt-get install -y apt-transport-https ca-certificates</code><br>安装docker<br><code>apt install docker.io</code><br>这时可能会弹出一个框，选Y<br>安装依赖包<br><code>apt --fix-broken install</code><br>安装完之后查看docker的版本检验是否安装成功<br>查看简略信息<br><code>docker -v</code><br>查看详细信息<br><code>docker version</code><br>启动docker<br><code>systemctl start docker</code><br>显示正在运行的容器<br><code>docker ps</code><br>显示所有的容器<br><code>docker ps -a</code></p>
-<h1 id="安装PiP"><a href="#安装PiP" class="headerlink" title="安装PiP"></a>安装PiP</h1><p><code>apt-get install python3-pip</code></p>
-<h1 id="安装docker-compose"><a href="#安装docker-compose" class="headerlink" title="安装docker-compose"></a>安装docker-compose</h1><p>Docker-Compose项目是Docker官方的开源项目，负责实现对Docker容器集群的快速编排。Compose 通过一个配置文件来管理多个Docker容器，在配置文件中，所有的容器通过services来定义，然后使用docker-compose脚本来启动，停止和重启应用，和应用中的服务以及所有依赖服务的容器，非常适合组合使用多个容器进行开发的场景。<br><code>pip3 install docker-compose</code><br>查看docker-compose版本<br><code>docker-compose -v</code></p>
-<h1 id="下载vulhub"><a href="#下载vulhub" class="headerlink" title="下载vulhub"></a>下载vulhub</h1><p><code>git clone https://github.com/vulhub/vulhub.git</code><br>进入目录<code>cd vulhub/shiro/CVE-2016-4437</code><br>启动靶场<br><code>docker-compose up -d</code><br>查看启动环境，发现端口是8080,在kali中使用浏览器访问.<br><code>docker-compose ps</code></p>
-<h1 id="互ping测试"><a href="#互ping测试" class="headerlink" title="互ping测试"></a>互ping测试</h1><p>进入宿主机终端查看你ip地址<code>ipconfig</code><br>查看虚拟机和docker的ip地址<code>ifconfig</code>或<code>ip addr</code><br>宿主机ping docker是ping不通的，因为不在同一个局域网进行通信需要依靠路由进行转发，需要手动对宿主机设置路由<br><code>route add -p 172.17.0.0 mask 255.255.0.0 192.168.32.1</code>以管理员身份打开命令窗口，执行命令<br>查看路由<code>route print</code>(注意：虚拟机要设为NAT模式)<br>此时我们就可以使用宿主机ping通docker了,然后宿主机访问靶场</p>
-<h1 id="关闭靶场"><a href="#关闭靶场" class="headerlink" title="关闭靶场"></a>关闭靶场</h1><p>docker-compose会默认根据当前目录下的配置文件启动容器，在关闭及移除环境的时候，也需要在对应目录下<br><code>docker-compose up -d</code><br>漏洞测试结束后，执行如下命令移除环境：<code>docker-compose down</code><br>finish!!!</p>
-]]></content>
-      <categories>
-        <category>环境搭建</category>
-      </categories>
-      <tags>
-        <tag>渗透测试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>burpsuite字典爆破</title>
     <url>/2023/02/05/burpsuite%E5%AD%97%E5%85%B8%E7%88%86%E7%A0%B4/</url>
     <content><![CDATA[<h1 id="使用工具：firefox-burpsuite"><a href="#使用工具：firefox-burpsuite" class="headerlink" title="使用工具：firefox,burpsuite"></a>使用工具：firefox,burpsuite</h1><span id="more"></span>
@@ -32,6 +12,25 @@
       <tags>
         <tag>Web</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/02/02/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>ctf-web</title>
@@ -53,6 +52,26 @@
       </categories>
       <tags>
         <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>docker搭建</title>
+    <url>/2023/03/26/docker%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<h1 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h1><span id="more"></span>
+<p>基于kali环境搭建</p>
+<h1 id="vulhub简介"><a href="#vulhub简介" class="headerlink" title="vulhub简介"></a>vulhub简介</h1><p>Vulhub是一个基于docker和docker-compose的漏洞环境集合，进入对应目录并执行一条语句即可启动一个全新的漏洞环境，让漏洞复现变得更加简单，让安全研究者更加专注于漏洞原理本身。Vulhub的官方地址为<a href="http://www.vulhub.org./">www.vulhub.org。</a></p>
+<h1 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h1><p>在root用户下更新软件源中的所有软件列表，update读取所有源的软件列表，需要联网下载，作用是激活和更新源。<br><code>apt-get update</code><br>使用atp命令需要其支持的https协议和CA证书，我们安装一下<br><code>apt-get install -y apt-transport-https ca-certificates</code><br>安装docker<br><code>apt install docker.io</code><br>这时可能会弹出一个框，选Y<br>安装依赖包<br><code>apt --fix-broken install</code><br>安装完之后查看docker的版本检验是否安装成功<br>查看简略信息<br><code>docker -v</code><br>查看详细信息<br><code>docker version</code><br>启动docker<br><code>systemctl start docker</code><br>显示正在运行的容器<br><code>docker ps</code><br>显示所有的容器<br><code>docker ps -a</code></p>
+<h1 id="安装PiP"><a href="#安装PiP" class="headerlink" title="安装PiP"></a>安装PiP</h1><p><code>apt-get install python3-pip</code></p>
+<h1 id="安装docker-compose"><a href="#安装docker-compose" class="headerlink" title="安装docker-compose"></a>安装docker-compose</h1><p>Docker-Compose项目是Docker官方的开源项目，负责实现对Docker容器集群的快速编排。Compose 通过一个配置文件来管理多个Docker容器，在配置文件中，所有的容器通过services来定义，然后使用docker-compose脚本来启动，停止和重启应用，和应用中的服务以及所有依赖服务的容器，非常适合组合使用多个容器进行开发的场景。<br><code>pip3 install docker-compose</code><br>查看docker-compose版本<br><code>docker-compose -v</code></p>
+<h1 id="下载vulhub"><a href="#下载vulhub" class="headerlink" title="下载vulhub"></a>下载vulhub</h1><p><code>git clone https://github.com/vulhub/vulhub.git</code><br>进入目录<code>cd vulhub/shiro/CVE-2016-4437</code><br>启动靶场<br><code>docker-compose up -d</code><br>查看启动环境，发现端口是8080,在kali中使用浏览器访问.<br><code>docker-compose ps</code></p>
+<h1 id="互ping测试"><a href="#互ping测试" class="headerlink" title="互ping测试"></a>互ping测试</h1><p>进入宿主机终端查看你ip地址<code>ipconfig</code><br>查看虚拟机和docker的ip地址<code>ifconfig</code>或<code>ip addr</code><br>宿主机ping docker是ping不通的，因为不在同一个局域网进行通信需要依靠路由进行转发，需要手动对宿主机设置路由<br><code>route add -p 172.17.0.0 mask 255.255.0.0 192.168.32.1</code>以管理员身份打开命令窗口，执行命令<br>查看路由<code>route print</code>(注意：虚拟机要设为NAT模式)<br>此时我们就可以使用宿主机ping通docker了,然后宿主机访问靶场</p>
+<h1 id="关闭靶场"><a href="#关闭靶场" class="headerlink" title="关闭靶场"></a>关闭靶场</h1><p>docker-compose会默认根据当前目录下的配置文件启动容器，在关闭及移除环境的时候，也需要在对应目录下<br><code>docker-compose up -d</code><br>漏洞测试结束后，执行如下命令移除环境：<code>docker-compose down</code><br>finish!!!</p>
+]]></content>
+      <categories>
+        <category>渗透测试</category>
+      </categories>
+      <tags>
+        <tag>靶场搭建</tag>
       </tags>
   </entry>
   <entry>
@@ -90,23 +109,18 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2023/02/02/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>sql注入</title>
+    <url>/2023/06/23/sql%E6%B3%A8%E5%85%A5/</url>
+    <content><![CDATA[<h1 id="sql注入"><a href="#sql注入" class="headerlink" title="sql注入"></a>sql注入</h1><span id="more"></span>
+<p>获得存在sql注入漏洞的网址后，在kali系统命令行模式下输入如下命令即可获取后台数据库中数据</p>
+<p>1.Sqlmap -u <a href="http://192.168.0.110/page.php?id=10">http://192.168.0.110/page.php?id=10</a> –dbs 显示数据库管理系统中所有数据库<br>2.Sqlmap -u <a href="http://192.168.0.110/page.php?id=10">http://192.168.0.110/page.php?id=10</a> –current -db 当前网站所使用得数据库<br>3.Sqlmap -u <a href="http://192.168.0.110/page.php?id=10">http://192.168.0.110/page.php?id=10</a> -D数据库名 –tables 显示当前数据库中所有数据表<br>4.Sqlmap -u <a href="http://192.168.0.110/page.php?id=10">http://192.168.0.110/page.php?id=10</a> -D 数据库名 -T表名 –columns 显示表中所有得字段名<br>5.Sqlmap -u <a href="http://192.168.0.110/page.php?id=10">http://192.168.0.110/page.php?id=10</a> -D 数据库名 -T表名 -C 字段名，字段名，字段名…(互相用逗号隔开) –dump 显示数据</p>
 ]]></content>
+      <categories>
+        <category>Web</category>
+      </categories>
+      <tags>
+        <tag>sql注入</tag>
+      </tags>
   </entry>
   <entry>
     <title>《攻防世界》刷题记录</title>
@@ -143,9 +157,9 @@
 <li>点击 Creat repository 进行创建<br><img src="https://s1.vika.cn/space/2022/10/27/0a4dbb10ca69422ca9ccb7493d0f177a"><h1 id="4-Git安装"><a href="#4-Git安装" class="headerlink" title="4.Git安装"></a>4.Git安装</h1></li>
 </ul>
 <p>1.进入官网：<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a> ，由于官网下载太慢可以通过淘宝的开源镜像下载 网址：<a href="https://registry.npmmirror.com/binary.html?path=git-for-windows/v2.36.1.windows.1/">https://registry.npmmirror.com/binary.html?path=git-for-windows/v2.36.1.windows.1/</a> ，下载版本更具自己的需求选择即可。<br>2.下载后安装Git即可，安装的目录可以使用默认目录【C:/Program Files/Git】，也可以自定义路径。<br>3.点击鼠标右键即可看见Git Bash。<br>4.配置用户名和邮箱<br>git config –global user.name “你的用户名”<br>git config –global user.email “你的邮箱”<br>5.通过git config -l 检查是否配置成功，至此git安装及配置全部完成。<br><img src="https://s1.vika.cn/space/2022/10/27/9115d60b377a47f3a8b79779a287ee65"></p>
-<h1 id="5-连接至Github"><a href="#5-连接至Github" class="headerlink" title="5.连接至Github"></a>5.连接至Github</h1><p>1.执行以下命令生成ssh公钥，此公钥用于你的计算机连接Github<br>ssh-keygen -t rsa -C “你的邮箱”<br>之后打开C盘下用户文件夹下的.ssh的文件夹，会看到 id_rsa.pub,用记事本打开上述图片中的公钥（id_rsa.pub），复制里面的内容，然后开始在github中配置ssh密钥。<br>2.将 SSH KEY 配置到 GitHub<br>进入github，点击右上角头像 选择settings，进入设置页后选择 SSH and GPG keys，名字随便起，公钥填到Key那一栏。<br><img src="https://s1.vika.cn/space/2022/10/27/eaccde8a10eb4cde945a1ed221bb6ace"><br>3.测试连接，输入命令:ssh -T <a href="mailto:&#x67;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;</a><br><img src="https://s1.vika.cn/space/2022/10/27/122bb1ef33074bee84030a525ce1ec56"><br>出现连接到账户的信息，说明已经完成了环境准备工作。</p>
+<h1 id="5-连接至Github"><a href="#5-连接至Github" class="headerlink" title="5.连接至Github"></a>5.连接至Github</h1><p>1.执行以下命令生成ssh公钥，此公钥用于你的计算机连接Github<br>ssh-keygen -t rsa -C “你的邮箱”<br>之后打开C盘下用户文件夹下的.ssh的文件夹，会看到 id_rsa.pub,用记事本打开上述图片中的公钥（id_rsa.pub），复制里面的内容，然后开始在github中配置ssh密钥。<br>2.将 SSH KEY 配置到 GitHub<br>进入github，点击右上角头像 选择settings，进入设置页后选择 SSH and GPG keys，名字随便起，公钥填到Key那一栏。<br><img src="https://s1.vika.cn/space/2022/10/27/eaccde8a10eb4cde945a1ed221bb6ace"><br>3.测试连接，输入命令:ssh -T <a href="mailto:&#x67;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#109;">&#x67;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#109;</a><br><img src="https://s1.vika.cn/space/2022/10/27/122bb1ef33074bee84030a525ce1ec56"><br>出现连接到账户的信息，说明已经完成了环境准备工作。</p>
 <h1 id="6-初始化-Hexo-项目"><a href="#6-初始化-Hexo-项目" class="headerlink" title="6.初始化 Hexo 项目"></a>6.初始化 Hexo 项目</h1><p>1.在目标路径（我这里选的路径为【C:/Hexo-Blog】）打开Git Bash Here命令窗口，执行hexo init初始化项目。hexo init blog-demo(项目名)<br>2.进入blog-demo ，输入npm i安装相关依赖。<br>cd blog-demo  //进入blog-demo文件夹<br>npm i<br>3.初始化项目后，blog-demo有如下结构：<br><img src="https://s1.vika.cn/space/2022/10/27/70cf503f27c54d30a31c6b13735023b7"><br>【node_modules】：依赖包<br>【scaffolds】：生成文章的一些模板<br>【source】：用来存放你的文章<br>【themes】：主题<br>【.npmignore】：发布时忽略的文件（可忽略）<br>【_config.landscape.yml】：主题的配置文件<br>【config.yml】：博客的配置文件<br>【package.json】：项目名称、描述、版本、运行和开发等信息<br>4.输入hexo server或者hexo s 启动项目<br>5.打开浏览器，输入地址：<a href="http://localhost:4000/">http://localhost:4000/</a> ，看到下面的效果，说明你的博客已经构建成功了。<br><img src="https://bu.dusays.com/2022/05/26/628e5423df640.webp"></p>
-<h1 id="7-将静态博客挂载到-GitHub-Pages"><a href="#7-将静态博客挂载到-GitHub-Pages" class="headerlink" title="7.将静态博客挂载到 GitHub Pages"></a>7.将静态博客挂载到 GitHub Pages</h1><p>1.安装 hexo-deployer-git<br>命令：npm install hexo-deployer-git –save<br>2.修改 _config.yml 文件<br>在blog-demo目录下的_config.yml，就是整个Hexo框架的配置文件了。可以在里面修改大部分的配置。详细可参考官方的配置描述。<br>修改最后一行的配置，将repository修改为你自己的github项目地址即可，还有分支要改为main代表主分支（注意缩进）。<br>deploy:<br>  type: git<br>  repository: <a href="mailto:&#103;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#117;&#x62;&#46;&#x63;&#111;&#109;">&#103;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#117;&#x62;&#46;&#x63;&#111;&#109;</a>:gfboke/gfboke.github.io.git<br>  branch: main<br>3.修改好配置后，运行如下命令，将代码部署到 GitHub.<br>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy  // Git BASH终端<br>hexo clean; hexo generate; hexo deploy  // VSCODE终端<br>hexo clean：删除之前生成的文件，若未生成过静态文件，可忽略此命令。<br>hexo generate：生成静态文章，可以用hexo g缩写<br>hexo deploy：部署文章，可以用hexo d缩写<br>如果出现Deploy done，则说明部署成功了。<br><img src="https://s1.vika.cn/space/2022/10/27/85b61e7242214d368539d744b4778a5d"><br>稍等两分钟，打开浏览器访问：<a href="https://gfboke.github.io/">https://gfboke.github.io</a> ，这时候我们就可以看到博客内容了。</p>
+<h1 id="7-将静态博客挂载到-GitHub-Pages"><a href="#7-将静态博客挂载到-GitHub-Pages" class="headerlink" title="7.将静态博客挂载到 GitHub Pages"></a>7.将静态博客挂载到 GitHub Pages</h1><p>1.安装 hexo-deployer-git<br>命令：npm install hexo-deployer-git –save<br>2.修改 _config.yml 文件<br>在blog-demo目录下的_config.yml，就是整个Hexo框架的配置文件了。可以在里面修改大部分的配置。详细可参考官方的配置描述。<br>修改最后一行的配置，将repository修改为你自己的github项目地址即可，还有分支要改为main代表主分支（注意缩进）。<br>deploy:<br>  type: git<br>  repository: <a href="mailto:&#x67;&#105;&#116;&#x40;&#x67;&#x69;&#116;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#105;&#116;&#x40;&#x67;&#x69;&#116;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;</a>:gfboke/gfboke.github.io.git<br>  branch: main<br>3.修改好配置后，运行如下命令，将代码部署到 GitHub.<br>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy  // Git BASH终端<br>hexo clean; hexo generate; hexo deploy  // VSCODE终端<br>hexo clean：删除之前生成的文件，若未生成过静态文件，可忽略此命令。<br>hexo generate：生成静态文章，可以用hexo g缩写<br>hexo deploy：部署文章，可以用hexo d缩写<br>如果出现Deploy done，则说明部署成功了。<br><img src="https://s1.vika.cn/space/2022/10/27/85b61e7242214d368539d744b4778a5d"><br>稍等两分钟，打开浏览器访问：<a href="https://gfboke.github.io/">https://gfboke.github.io</a> ，这时候我们就可以看到博客内容了。</p>
 ]]></content>
       <categories>
         <category>Hexo</category>

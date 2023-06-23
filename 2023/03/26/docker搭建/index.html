@@ -20,17 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="技术随想">
-<meta property="og:type" content="website">
-<meta property="og:title" content="朕&amp;博客">
-<meta property="og:url" content="http://example.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
+  <meta name="description" content="docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker搭建">
+<meta property="og:url" content="http://example.com/2023/03/26/docker%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="朕&amp;博客">
-<meta property="og:description" content="技术随想">
+<meta property="og:description" content="docker">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-26T01:40:55.000Z">
+<meta property="article:modified_time" content="2023-06-23T12:06:21.703Z">
 <meta property="article:author" content="朕">
+<meta property="article:tag" content="靶场搭建">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+<link rel="canonical" href="http://example.com/2023/03/26/docker%E6%90%AD%E5%BB%BA/">
 
 
 <script id="page-configurations">
@@ -38,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>分类: 环境搭建 | 朕&博客</title>
+  <title>docker搭建 | 朕&博客</title>
   
 
 
@@ -126,7 +129,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">5</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -136,7 +139,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">9</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-links">
@@ -192,57 +195,180 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/26/docker%E6%90%AD%E5%BB%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/123.jpg">
+      <meta itemprop="name" content="朕">
+      <meta itemprop="description" content="技术随想">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="朕&博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          docker搭建
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-03-26 09:40:55" itemprop="dateCreated datePublished" datetime="2023-03-26T09:40:55+08:00">2023-03-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-06-23 20:06:21" itemprop="dateModified" datetime="2023-06-23T20:06:21+08:00">2023-06-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">渗透测试</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">环境搭建
-          <small>分类</small>
-        </h2>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2023/03/26/docker%E6%90%AD%E5%BB%BA/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2023/03/26/docker%E6%90%AD%E5%BB%BA/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2023-03-26T09:40:55+08:00"
-              content="2023-03-26">
-          03-26
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/03/26/C%E8%AF%AD%E8%A8%80/" itemprop="url">
-            <span itemprop="name">docker搭建</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+        <h1 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h1><span id="more"></span>
+<p>基于kali环境搭建</p>
+<h1 id="vulhub简介"><a href="#vulhub简介" class="headerlink" title="vulhub简介"></a>vulhub简介</h1><p>Vulhub是一个基于docker和docker-compose的漏洞环境集合，进入对应目录并执行一条语句即可启动一个全新的漏洞环境，让漏洞复现变得更加简单，让安全研究者更加专注于漏洞原理本身。Vulhub的官方地址为<a target="_blank" rel="noopener" href="http://www.vulhub.org./">www.vulhub.org。</a></p>
+<h1 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h1><p>在root用户下更新软件源中的所有软件列表，update读取所有源的软件列表，需要联网下载，作用是激活和更新源。<br><code>apt-get update</code><br>使用atp命令需要其支持的https协议和CA证书，我们安装一下<br><code>apt-get install -y apt-transport-https ca-certificates</code><br>安装docker<br><code>apt install docker.io</code><br>这时可能会弹出一个框，选Y<br>安装依赖包<br><code>apt --fix-broken install</code><br>安装完之后查看docker的版本检验是否安装成功<br>查看简略信息<br><code>docker -v</code><br>查看详细信息<br><code>docker version</code><br>启动docker<br><code>systemctl start docker</code><br>显示正在运行的容器<br><code>docker ps</code><br>显示所有的容器<br><code>docker ps -a</code></p>
+<h1 id="安装PiP"><a href="#安装PiP" class="headerlink" title="安装PiP"></a>安装PiP</h1><p><code>apt-get install python3-pip</code></p>
+<h1 id="安装docker-compose"><a href="#安装docker-compose" class="headerlink" title="安装docker-compose"></a>安装docker-compose</h1><p>Docker-Compose项目是Docker官方的开源项目，负责实现对Docker容器集群的快速编排。Compose 通过一个配置文件来管理多个Docker容器，在配置文件中，所有的容器通过services来定义，然后使用docker-compose脚本来启动，停止和重启应用，和应用中的服务以及所有依赖服务的容器，非常适合组合使用多个容器进行开发的场景。<br><code>pip3 install docker-compose</code><br>查看docker-compose版本<br><code>docker-compose -v</code></p>
+<h1 id="下载vulhub"><a href="#下载vulhub" class="headerlink" title="下载vulhub"></a>下载vulhub</h1><p><code>git clone https://github.com/vulhub/vulhub.git</code><br>进入目录<code>cd vulhub/shiro/CVE-2016-4437</code><br>启动靶场<br><code>docker-compose up -d</code><br>查看启动环境，发现端口是8080,在kali中使用浏览器访问.<br><code>docker-compose ps</code></p>
+<h1 id="互ping测试"><a href="#互ping测试" class="headerlink" title="互ping测试"></a>互ping测试</h1><p>进入宿主机终端查看你ip地址<code>ipconfig</code><br>查看虚拟机和docker的ip地址<code>ifconfig</code>或<code>ip addr</code><br>宿主机ping docker是ping不通的，因为不在同一个局域网进行通信需要依靠路由进行转发，需要手动对宿主机设置路由<br><code>route add -p 172.17.0.0 mask 255.255.0.0 192.168.32.1</code>以管理员身份打开命令窗口，执行命令<br>查看路由<code>route print</code>(注意：虚拟机要设为NAT模式)<br>此时我们就可以使用宿主机ping通docker了,然后宿主机访问靶场</p>
+<h1 id="关闭靶场"><a href="#关闭靶场" class="headerlink" title="关闭靶场"></a>关闭靶场</h1><p>docker-compose会默认根据当前目录下的配置文件启动容器，在关闭及移除环境的时候，也需要在对应目录下<br><code>docker-compose up -d</code><br>漏洞测试结束后，执行如下命令移除环境：<code>docker-compose down</code><br>finish!!!</p>
 
     </div>
+
+    
+    
+    
+    <div>
+       
+       <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+       
+    </div>
+        <div class="reward-container">
+  <div>走过路过不要错过</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechat.png" alt="朕 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="朕 支付宝">
+        <p>支付宝</p>
+      </div>
+
   </div>
-  
-  
-  
+</div>
 
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>朕
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2023/03/26/docker%E6%90%AD%E5%BB%BA/" title="docker搭建">http://example.com/2023/03/26/docker搭建/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%9D%B6%E5%9C%BA%E6%90%AD%E5%BB%BA/" rel="tag"># 靶场搭建</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/02/09/%E8%9A%81%E5%89%91%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" rel="prev" title="一句话木马">
+      <i class="fa fa-chevron-left"></i> 一句话木马
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/06/23/sql%E6%B3%A8%E5%85%A5/" rel="next" title="sql注入">
+      sql注入 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -289,6 +415,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#docker"><span class="nav-number">1.</span> <span class="nav-text">docker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vulhub%E7%AE%80%E4%BB%8B"><span class="nav-number">2.</span> <span class="nav-text">vulhub简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85docker"><span class="nav-number">3.</span> <span class="nav-text">安装docker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85PiP"><span class="nav-number">4.</span> <span class="nav-text">安装PiP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85docker-compose"><span class="nav-number">5.</span> <span class="nav-text">安装docker-compose</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDvulhub"><span class="nav-number">6.</span> <span class="nav-text">下载vulhub</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%92ping%E6%B5%8B%E8%AF%95"><span class="nav-number">7.</span> <span class="nav-text">互ping测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E9%9D%B6%E5%9C%BA"><span class="nav-number">8.</span> <span class="nav-text">关闭靶场</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -304,7 +431,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -317,7 +444,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -348,7 +475,7 @@
           <h3 class="widget-title">Tag Cloud</h3>
           <div id="myCanvasContainer" class="widget tagcloud">
               <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf/" rel="tag">ctf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" rel="tag">渗透测试</a><span class="tag-list-count">1</span></li></ul>
+                  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/" rel="tag">Web</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf/" rel="tag">ctf</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql%E6%B3%A8%E5%85%A5/" rel="tag">sql注入</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%B6%E5%9C%BA%E6%90%AD%E5%BB%BA/" rel="tag">靶场搭建</a><span class="tag-list-count">1</span></li></ul>
               </canvas>
           </div>
         </div>
@@ -382,7 +509,7 @@
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共7.2k字</span>
+  <span class="post-count">博客全站共7.4k字</span>
   <span class="post-meta-divider">|</span>
   本站总访问量<span id="busuanzi_value_site_pv"></span>次
   <span class="post-meta-divider">|</span>
